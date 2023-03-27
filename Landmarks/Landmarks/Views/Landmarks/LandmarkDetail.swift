@@ -23,13 +23,12 @@ struct LandmarkDetail: View {
                 .frame(height: 300)
             
             CircleImage(image: landmark.image)
-                .offset(y: -130)
-                .padding(.bottom, -130)
-            
+
             VStack(alignment:.leading) {
                 HStack{
                     Text(landmark.name)
                         .font(.title)
+                        .accessibilityAddTraits(.isHeader)
                     FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
                 }
                 

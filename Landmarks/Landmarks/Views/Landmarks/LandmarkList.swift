@@ -32,6 +32,11 @@ struct LandmarkList: View {
                     } label: {
                         LandmarkRow(landmark: landmark)
                     }
+                    .accessibilityAction(named: landmark.isFavorite ? "Unfavorite" : "Mark Favorite") {
+                        if let index = modelData.landmarks.firstIndex(where: { $0.id == landmark.id }) {
+                            modelData.landmarks[index].isFavorite.toggle()
+                        }
+                    }
                 }
             }
             .navigationTitle("Landmarks")

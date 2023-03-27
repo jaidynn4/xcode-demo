@@ -22,9 +22,11 @@ struct LandmarkRow: View {
             if landmark.isFavorite {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
+                    .accessibilityValue("Favorited")
+                    .accessibilitySortPriority(1)
             }
         }
-        
+        .accessibilityElement(children: .combine)
     }
 }
 

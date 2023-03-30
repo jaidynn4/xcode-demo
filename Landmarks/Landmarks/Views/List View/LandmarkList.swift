@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+//This is the list page.
 struct LandmarkList: View {
     @EnvironmentObject var modelData: ModelData
+    //This profile code is copied from the CategoryHome page.
+    //TODO can it be put in ContentView to be more at a top level?
+    @State private var showingProfile = false
+    //This stores the toggle value for whether the list should filter by favorites or not.
     @State private var showFavoritesOnly = false
     
+    //If the landmark's data marks it as a favorite and the list should be filtered, the filteredLandmarks array filters it.
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter {
             landmark in
@@ -27,6 +33,7 @@ struct LandmarkList: View {
                 
                 ForEach(filteredLandmarks) {
                     landmark in
+                    //clicking any landmark row leads to a detail page.
                     NavigationLink {
                         LandmarkDetail(landmark: landmark)
                     } label: {
@@ -40,6 +47,17 @@ struct LandmarkList: View {
                 }
             }
             .navigationTitle("Landmarks")
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileHost()
+                    .environmentObject(modelData)
+            }
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Draws a mountain symbol for the badge.
 struct BadgeSymbol: View {
     static let symbolColor = Color(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
 

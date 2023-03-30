@@ -8,6 +8,7 @@
 import SwiftUI
 import MapKit
 
+//A map that shows the location of the landmark for the detail view
 struct MapView: View {
     var coordinate: CLLocationCoordinate2D
     @State private var region = MKCoordinateRegion()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Draws a hexagon shape for the badge outline.
 struct HexagonParameters {
     
     struct Segment {

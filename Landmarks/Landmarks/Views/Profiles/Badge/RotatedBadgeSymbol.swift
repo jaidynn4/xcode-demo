@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Draws a rotated version of the mountain symbol for the badge.
 struct RotatedBadgeSymbol: View {
     let angle: Angle
     

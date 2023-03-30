@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Fills in the hexagon parameters with a gradient color for the badge.
 struct BadgeBackground: View {
     var body: some View {
         GeometryReader {

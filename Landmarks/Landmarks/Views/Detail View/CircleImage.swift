@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//An circular image of the landmark for the detail view.
 struct CircleImage: View {
     var image: Image
     

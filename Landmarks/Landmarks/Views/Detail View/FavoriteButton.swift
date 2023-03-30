@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//A star that can be clicked to favorite a landmark
 struct FavoriteButton: View {
     @Binding var isSet: Bool
     

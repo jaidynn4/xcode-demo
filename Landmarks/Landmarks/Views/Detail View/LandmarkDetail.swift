@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+//A detail view that appears after clicking a landmark.
 struct LandmarkDetail: View {
     @EnvironmentObject var modelData: ModelData
     
     var landmark: Landmark
     
+    //Finds the list index for this landmark
     var landmarkIndex: Int {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }

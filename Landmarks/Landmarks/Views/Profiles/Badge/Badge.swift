@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Draws all of the badge components together.
 struct Badge: View {
     var badgeSymbols: some View {
         ForEach(0..<8) {

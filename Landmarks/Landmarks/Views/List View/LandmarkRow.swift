@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//A single row in the list view.
 struct LandmarkRow: View {
     var landmark: Landmark
     
@@ -19,6 +20,7 @@ struct LandmarkRow: View {
             
             Spacer()
             
+            //Only shows a star if the landmark is favorited.
             if landmark.isFavorite {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)

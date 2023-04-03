@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//This View contains a PageViewController and a PageControl
 struct PageView<Page: View>: View {
     var pages: [Page]
     @State private var currentPage = 0
@@ -17,6 +18,7 @@ struct PageView<Page: View>: View {
                 pages: pages,
                 currentPage: $currentPage
             )
+            //Pass the number of pages and the index binding to the control so that it displays correctly
             PageControl(numberOfPages: pages.count, currentPage: $currentPage)
                 .frame(width: CGFloat(pages.count * 18))
                 .padding(.trailing)

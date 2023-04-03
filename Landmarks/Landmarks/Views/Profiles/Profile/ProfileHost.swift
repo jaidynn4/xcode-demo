@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//this is a single view that hosts a static summary view of a profile as well as an edit view
 struct ProfileHost: View {
     @Environment(\.editMode) var editMode
     @EnvironmentObject var modelData: ModelData
@@ -21,7 +22,6 @@ struct ProfileHost: View {
                         editMode?.animation().wrappedValue = .inactive
                     }
                 }
-                
                 
                 Spacer()
                 EditButton()

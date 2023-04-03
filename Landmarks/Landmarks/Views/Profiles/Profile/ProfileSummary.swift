@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//parent view ProfileHost manages the state for this view
 struct ProfileSummary: View {
     @EnvironmentObject var modelData: ModelData
     var profile: Profile
@@ -50,7 +51,7 @@ struct ProfileSummary: View {
                         .environmentObject(ModelData())
                 }
             }
-        }
+        }.padding(20)
     }
 }
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//editing view for the profile page
 struct ProfileEditor: View {
     @Binding var profile: Profile
     

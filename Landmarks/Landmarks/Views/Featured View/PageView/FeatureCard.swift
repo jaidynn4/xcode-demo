@@ -31,6 +31,7 @@ struct TextOverlay: View {
     }
 
     var body: some View {
+        //TODO determine whether this text overlay is accessible
         ZStack(alignment: .bottomLeading) {
             gradient
             VStack(alignment: .leading) {

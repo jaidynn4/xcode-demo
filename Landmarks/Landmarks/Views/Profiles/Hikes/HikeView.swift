@@ -16,25 +16,30 @@ struct HikeView: View {
     var body: some View {
         VStack {
             HStack {
-                HikeGraph(hike: hike, path: \.elevation)
-                    .frame(width: 50, height: 30)
-
-                VStack(alignment: .leading) {
-                    Text(hike.name)
-                        .font(.headline)
-                    Text(hike.distanceText)
-                }
-
-                Spacer()
-
+                
                 Button {
                     showDetail.toggle()
                 } label: {
-                    Label("Graph", systemImage: "chevron.right.circle")
-                        .labelStyle(.iconOnly)
-                        .imageScale(.large)
-                        .rotationEffect(.degrees(showDetail ? 90 : 0))
-                        .padding()
+                    HStack{
+                        
+                        HikeGraph(hike: hike, path: \.elevation)
+                            .frame(width: 50, height: 30)
+
+                        VStack(alignment: .leading) {
+                            Text(hike.name)
+                                .font(.headline)
+                            Text(hike.distanceText)
+                        }
+
+                        Spacer()
+                        
+                        Label("Graph", systemImage: "chevron.right.circle")
+                            .labelStyle(.iconOnly)
+                            .imageScale(.large)
+                            .rotationEffect(.degrees(showDetail ? 90 : 0))
+                            .padding()
+                        
+                    }
                 }
             }
 

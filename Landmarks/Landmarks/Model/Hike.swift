@@ -7,6 +7,7 @@
 
 import Foundation
 
+//data storage for the hike view in a user profile
 struct Hike: Codable, Hashable, Identifiable {
     var id: Int
     var name: String

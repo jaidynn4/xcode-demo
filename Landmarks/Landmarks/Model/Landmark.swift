@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
+//Landmark object to store model information
 struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
@@ -18,6 +19,7 @@ struct Landmark: Hashable, Codable, Identifiable {
     var isFavorite: Bool
     var isFeatured: Bool
     
+    //Specify the category for the featured page
     var category: Category
     enum Category: String, CaseIterable, Codable {
         case lakes = "Lakes"
@@ -25,15 +27,18 @@ struct Landmark: Hashable, Codable, Identifiable {
         case mountains = "Mountains"
     }
     
+    //Get the landmark image
     private var imageName: String
     var image: Image {
         Image(imageName)
     }
     
+    //Get the larger featured image from resources if it exists
     var featureImage: Image? {
         isFeatured ? Image(imageName + "_feature") : nil
     }
     
+    //Get map coordinates
     private var coordinates: Coordinates
     var locationCoordinate: CLLocationCoordinate2D{
         CLLocationCoordinate2D(
@@ -42,6 +47,7 @@ struct Landmark: Hashable, Codable, Identifiable {
         )
     }
     
+    //Struct used for map coordinates
     struct Coordinates: Hashable, Codable {
         var latitude: Double
         var longitude: Double
